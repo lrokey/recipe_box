@@ -5,6 +5,8 @@ class Recipe < ApplicationRecord
 	belongs_to :user
 	has_many :ingredients
 	has_many :directions
+	has_many :taggings
+	has_many :categories, through: :taggings
 
 	accepts_nested_attributes_for :ingredients, reject_if: :all_blank, allow_destroy: true
 	accepts_nested_attributes_for :directions, reject_if: :all_blank, allow_destroy: true
@@ -18,5 +20,13 @@ class Recipe < ApplicationRecord
 		slug.blank? || title_changed?
 	end
 
+	def category_list
+		categories.join(", ")
+	end
 
+	def category_list=(categories_string)
+		category_names = categories_string.split(",").collect{|s| s.strip.downcase}.uniq
+		new_or_found_categories = category_names.collect { |name| Category.find_or_create_by(name: name)}
+		self.categories = new_or_found_categories
+	end
 end

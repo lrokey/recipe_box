@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170119173625) do
+ActiveRecord::Schema.define(version: 20170204212107) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "directions", force: :cascade do |t|
     t.text     "step"
@@ -52,6 +58,15 @@ ActiveRecord::Schema.define(version: 20170119173625) do
     t.datetime "image_updated_at"
     t.string   "slug"
     t.index ["slug"], name: "index_recipes_on_slug"
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_taggings_on_category_id"
+    t.index ["recipe_id"], name: "index_taggings_on_recipe_id"
   end
 
   create_table "users", force: :cascade do |t|
