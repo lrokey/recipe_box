@@ -11,8 +11,8 @@
 					= @recipe.user.username
 		.col-md-4
 			#recipe_categories
-				%h1= @recipe.category_list
-				%p.description= @recipe.categories
+				%h2= @recipe.category_list.to_s
+	
 	.row
 		.col-md-6
 			#ingredients
