@@ -2,13 +2,17 @@
 	#recipe_top.row
 		.col-md-4
 			= image_tag @recipe.image.url(:medium), class: "recipe_image"
-		.col-md-8
+		.col-md-4
 			#recipe_info
 				%h1= @recipe.title
 				%p.description= @recipe.description
 				%p
 					Submitted by
 					= @recipe.user.username
+		.col-md-4
+			#recipe_categories
+				%h1= @recipe.category_list
+				%p.description= @recipe.categories
 	.row
 		.col-md-6
 			#ingredients
