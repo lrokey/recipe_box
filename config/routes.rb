@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  root "static_pages#home"
+
   get 'static_pages/home'
 
   get 'static_pages/about'
@@ -9,5 +12,5 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  root "recipes#index"
+  
 end
