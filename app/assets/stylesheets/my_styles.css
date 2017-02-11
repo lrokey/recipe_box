@@ -6,7 +6,15 @@
 body {
     background-color: #ebeef3;
 }
+.carousel img{ border-radius: 25px; }
+.carousel-control { background-image:none !important; }
 
+
+ .custom-pic {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+
+}
 .custom-counter {
     margin: 0;
     padding: 0;
@@ -180,3 +188,5 @@ body {
 .add-button {
     margin-top: 25px;
 }
+
+

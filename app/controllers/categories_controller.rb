@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
 	before_action :find_category, only: [:show, :edit, :update, :destroy]
 	def index
-		@category  = Category.all.order("created_at DESC")
+		@category  = Category.all.order("name ASC")
 	end
 
 	def show
