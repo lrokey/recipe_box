@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215145937) do
+ActiveRecord::Schema.define(version: 20170215152359) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20170215145937) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "slug"
+    t.index ["slug"], name: "index_drinks_on_slug", unique: true
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
