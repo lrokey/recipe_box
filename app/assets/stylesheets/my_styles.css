@@ -206,7 +206,12 @@ body {
 
 #directions textarea {
     height: 100px;
+}
 
+.banner-title{
+    text-shadow: 4px 4px #333;
+    color: #ebeef3;
+    font-size: 100px;
 }
 
 

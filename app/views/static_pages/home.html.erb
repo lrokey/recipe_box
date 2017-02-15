@@ -1,10 +1,8 @@
 <head>
   <link rel="stylesheet" type="text/css" href="assets/stylesheets/my_style.css">
 </head>
-<h1>Recipe Box</h1>
 
-<!-- Carousel
-    ================================================== -->
+<!-- Carousel ================================================== -->
     <div id="myCarousel" class="carousel slide round-carousel" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -17,9 +15,9 @@
           <img class="first-slide custom-pic" src="assets/pasta.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              <h1 class="banner-title">Recipes</h1>
+              <p>Note: If you're viewing this page via a URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+              <%= link_to "View Recipes", recipes_url, class: 'btn btn-lg btn-primary' %>
             </div>
           </div>
         </div>
@@ -27,9 +25,9 @@
           <img class="second-slide custom-pic" src="assets/salad.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
+              <h1 class="banner-title">Drinks</h1>
               <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <%= link_to "View Drinks", drinks_url, class: 'btn btn-lg btn-primary' %>
             </div>
           </div>
         </div>
@@ -37,9 +35,10 @@
           <img class="third-slide custom-pic" src="assets/counter.jpg" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
+              <h1 class="banner-title">Categories</h1>
               <h1>One more for good measure.</h1>
               <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              <%= link_to "View Categories", categories_url, class: 'btn btn-lg btn-primary' %>
             </div>
           </div>
         </div>
@@ -101,7 +100,7 @@
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017 Rokey. &middot;</p>
+        <p>&copy; 2017 Rokey</p>
       </footer>
 
     </div><!-- /.container -->
