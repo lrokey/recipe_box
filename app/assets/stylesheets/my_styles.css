@@ -175,18 +175,26 @@ body {
 }
 
 .form-input {
-    width: 65% !important;
+    width: 80% !important;
     float: left;
+    padding-left: 10px;
 }
 
 .form-button {
     float: left;
-    width: 30% !important;
-    margin-left: 5%;
+    width: 10% !important;
+
 }
 
 .add-button {
     margin-top: 25px;
+}
+
+label{
+    visibility: hidden;
+    float:left;
+    /*padding-right: 5px;*/
+    padding-top: 5px;
 }
 
 
