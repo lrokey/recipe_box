@@ -1,0 +1,33 @@
+.main_content
+	#drink_top.row
+		.col-md-6
+			= image_tag @drink.image.url(:medium), class: "recipe_image"
+		.col-md-6
+			#recipe_info
+				%h1= @drink.title
+				%p.description= @drink.description
+				%p
+					Submitted by
+					= @drink.user.username	
+	.row
+		.col-md-6
+			#ingredients
+				%h2 Ingredients
+				%ul
+					- @drink.ingredients.each do |ingredient|
+						.ingredients-listing
+							%li= ingredient.name
+		.col-md-6
+			#directions
+				%h2 Directions
+				%ol
+					.custom-counter
+						- @drink.directions.each do |direction|
+							%li= direction.step
+	.row
+		.col-md-12
+			= link_to "Back", drinks_url, class: "btn btn-default"
+			- if user_signed_in?
+				= link_to "Edit", edit_drink_path, class: "btn btn-default"
+				= link_to "Delete", drink_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+

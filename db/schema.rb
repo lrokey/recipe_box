@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206225456) do
+ActiveRecord::Schema.define(version: 20170215145937) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -24,7 +24,21 @@ ActiveRecord::Schema.define(version: 20170206225456) do
     t.integer  "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "drink_id"
+    t.index ["drink_id"], name: "index_directions_on_drink_id"
     t.index ["recipe_id"], name: "index_directions_on_recipe_id"
+  end
+
+  create_table "drinks", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -44,6 +58,8 @@ ActiveRecord::Schema.define(version: 20170206225456) do
     t.integer  "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "drink_id"
+    t.index ["drink_id"], name: "index_ingredients_on_drink_id"
     t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 

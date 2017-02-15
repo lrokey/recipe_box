@@ -1,0 +1,9 @@
+- @drink.each_slice(3) do |drinks|
+	.row
+		- drinks.each do |drink|
+			.col-md-4
+				.recipe
+					.image_wrapper
+						= link_to drink do
+							= image_tag drink.image.url(:medium)
+					%h2= link_to drink.title, drink
