@@ -9,6 +9,9 @@
 				%p
 					Submitted by
 					= @recipe.user.username
+				%p.description Source
+				%p
+					= @recipe.source
 		.col-md-4
 			#recipe_categories
 				%h2= @recipe.category_list.to_s

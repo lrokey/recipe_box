@@ -31,5 +31,4 @@ class CategoriesController < ApplicationController
 		def find_category
 			@category = Category.friendly.find(params[:id])
 		end
-
 end

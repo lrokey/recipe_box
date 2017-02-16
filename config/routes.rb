@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'sources/edit'
+
+  get 'sources/index'
+
+  get 'sources/show'
+
   root "static_pages#home"
 
   get 'static_pages/home'
